@@ -2,7 +2,12 @@ div {
     border: 1px black solid;
 }
 
-#calculator {
+button {
+    height: 100%;
+    width: 100%;
+}
+
+.calculator {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,14 +15,14 @@ div {
     width: 400px;
 }
 
-#display {
+.display {
     height: 100px;
     width: 80%;
     align-items: right;
     margin: 25px;
 }
 
-#display .result {
+.display .result {
     float: right;
     font-size: 25px;
 }
@@ -25,12 +30,17 @@ div {
 .buttons {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 80%;
+    width: 80%;
+    margin-bottom: 25px;
 }
+
 #numbers {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: 80%;
 }
 
 .number-rows {
@@ -39,7 +49,8 @@ div {
     justify-content: space-between;
 }
 
-button {
-    height: 100%;
-    width: 100%;
+.operators {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
 }
