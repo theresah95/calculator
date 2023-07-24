@@ -16,6 +16,9 @@ button {
 }
 
 .display {
+    display: flex;
+    justify-content: right;
+    align-items: end;
     height: 100px;
     width: 80%;
     align-items: right;
@@ -23,14 +26,16 @@ button {
 }
 
 .display .result {
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
     float: right;
-    font-size: 25px;
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+   
     height: 80%;
     width: 80%;
     margin-bottom: 25px;
@@ -46,7 +51,6 @@ button {
 .number-rows {
     display: flex;
     flex: 1;
-    justify-content: space-between;
 }
 
 .operators {
