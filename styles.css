@@ -70,6 +70,11 @@ button {
     flex: 1;
 }
 
+.bottom-row {
+    display: flex;
+    flex: 1;
+}
+
 .operators {
     display: flex;
     flex-direction: column;

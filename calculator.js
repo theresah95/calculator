@@ -57,3 +57,41 @@ function operate (num1, num2, operator) {
 
     return result;
 };
+
+//Button Functionality
+let value = "";
+let text = document.getElementById('result');
+
+//Number Keys Except Bottom Row
+let numbers = document.querySelectorAll('div.number-rows button');
+
+for (i of numbers){
+    i.addEventListener(
+        'click', 
+        function(){
+            text.style.fontSize = "40px";
+            value = value + this.innerHTML;
+            text.innerHTML = value;
+        }
+    );
+};
+
+//Bottom Row Keys
+let bottomRow = document.querySelectorAll('div.bottom-row button');
+
+for (i of bottomRow){
+    i.addEventListener(
+        'click',
+        function(){
+
+            if(this.innerHTML == "AC"){
+                value = "";
+                text.innerHTML = value;
+            } else {
+                text.style.fontSize = "40px";
+                value = value + this.innerHTML;
+                text.innerHTML = value;
+            } 
+        }
+    );
+};
