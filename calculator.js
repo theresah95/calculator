@@ -59,7 +59,7 @@ function operate (num1, num2, operator) {
 };
 
 //Button Functionality
-let value = "";
+let inputValue = "";
 let text = document.getElementById('result');
 
 //Number Keys Except Bottom Row
@@ -70,8 +70,8 @@ for (i of numbers){
         'click', 
         function(){
             text.style.fontSize = "40px";
-            value = value + this.innerHTML;
-            text.innerHTML = value;
+            inputValue = inputValue + this.innerHTML;
+            text.innerHTML = inputValue;
         }
     );
 };
@@ -85,12 +85,12 @@ for (i of bottomRow){
         function(){
 
             if(this.innerHTML == "AC"){
-                value = "";
-                text.innerHTML = value;
+                inputValue = "";
+                text.innerHTML = inputValue;
             } else {
                 text.style.fontSize = "40px";
-                value = value + this.innerHTML;
-                text.innerHTML = value;
+                inputValue = inputValue + this.innerHTML;
+                text.innerHTML = inputValue;
             } 
         }
     );
