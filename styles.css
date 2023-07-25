@@ -3,8 +3,8 @@
 }
 body {
   background-image: url("codioful-formerly-gradienta-9X6tbXe_bw4-unsplash.jpg");
-  background-size: 100%; 
-  background-color: palegreen;
+  background-size: 100vmax;
+  background-color: white;
   display: flex;
   justify-content: center;
 }
@@ -25,7 +25,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 400px;
+    height: 425px;
     width: 350px;
     background-color: white;
     border-radius: 25px;
