@@ -1,24 +1,34 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
 body {
   background-image: url("codioful-formerly-gradienta-9X6tbXe_bw4-unsplash.jpg");
   background-size: 100%; 
+  background-color: palegreen;
+  display: flex;
+  justify-content: center;
 }
-
+/* 
 div {
     border: 1px black solid;
-}
+} */
 
 button {
     height: 100%;
     width: 100%;
+    background-color: lightgrey;
+    border-radius: 50px;
+    border: 5px white solid;
 }
 
 .calculator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
-    width: 25vw;
+    height: 400px;
+    width: 350px;
     background-color: white;
+    border-radius: 25px;
 }
 
 .display {
@@ -29,13 +39,14 @@ button {
     width: 80%;
     align-items: right;
     margin: 25px;
+    border: 5px lightgrey solid;
+    border-radius: 25px;
 }
 
 .display .result {
     font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
-    position: absolute;
     float: right;
+    padding: 5px;
 }
 
 .buttons {
@@ -45,24 +56,22 @@ button {
     margin-bottom: 25px;
     height: 80%;
     width: 80%;
+    font-size: 30px;
 }
 
 #numbers {
     display: flex;
     flex-direction: column;
     flex: 2 1 auto;
-    justify-content: space-evenly;
 }
 
 .number-rows {
     display: flex;
     flex: 1;
-    justify-content: space-evenly;
 }
 
 .operators {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    justify-content: space-evenly;
 }
