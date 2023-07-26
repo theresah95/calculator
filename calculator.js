@@ -16,7 +16,7 @@ function multiply (num1, num2) {
 };
 //Takes two numbers and divides them then returns quotient
 function divide (num1, num2) {
-    let quotient = num1/num2;
+    let quotient = num1 / num2;
     return quotient;
 };
 
