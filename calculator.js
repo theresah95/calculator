@@ -20,7 +20,7 @@ function divide (num1, num2) {
     return quotient;
 };
 
-//Tests to check above functions
+//Testers to check above functions
 // console.log(add(5, 2));
 // console.log(subtract(5, 2));
 // console.log(multiply(5, 2));
@@ -35,12 +35,7 @@ let num2 = 0;
 //Operator entered in calculator
 let operator = '';
 
-/** Operate Function
- * @param {number} num1 
- * @param {number} num2 
- * @param {string} operator
- * @returns result of calculation
- */
+//Takes two numbers and an operator and returns the value of the equation
 function operate (num1, num2, operator) {
     
     let result = 0;
@@ -85,8 +80,7 @@ for (i of bottomRow){
         function(){
 
             if(this.innerHTML == "AC"){
-                inputValue = "";
-                text.innerHTML = inputValue;
+                clearDisplay();
             } else {
                 text.style.fontSize = "40px";
                 inputValue = inputValue + this.innerHTML;
@@ -96,3 +90,8 @@ for (i of bottomRow){
     );
 };
 
+//Helper Function to Clear the Display and contents of inputValue variable
+function clearDisplay (){
+    inputValue = "";
+    text.innerHTML = inputValue;
+}

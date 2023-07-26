@@ -44,9 +44,9 @@ button {
 }
 
 .display .result {
-    font-size: 40px;
     padding: 5px;
     display: inline-block;
+    width: 100%;
 }
 
 .buttons {
