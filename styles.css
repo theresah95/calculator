@@ -45,8 +45,8 @@ button {
 
 .display .result {
     font-size: 40px;
-    float: right;
     padding: 5px;
+    display: inline-block;
 }
 
 .buttons {
