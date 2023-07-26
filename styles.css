@@ -1,6 +1,7 @@
 * {
     font-family: 'Courier New', Courier, monospace;
 }
+
 body {
   background-image: url("codioful-formerly-gradienta-9X6tbXe_bw4-unsplash.jpg");
   background-size: 100vmax;
@@ -75,7 +76,7 @@ button {
     flex: 1;
 }
 
-.operators {
+.operator-buttons {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;

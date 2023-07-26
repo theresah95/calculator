@@ -95,3 +95,21 @@ function clearDisplay (){
     inputValue = "";
     text.innerHTML = inputValue;
 }
+
+//Operator Buttons
+let operatorButtons = document.getElementsByClassName('operators');
+
+for (i of operatorButtons){
+    i.addEventListener(
+        'click',
+        function(){
+            num1 = inputValue;
+            clearDisplay();
+            operator = this.innerHTML;
+
+            console.log(num1);
+            console.log(operator);
+
+        }
+    );
+};
