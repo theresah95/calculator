@@ -37,6 +37,9 @@ let operator = '';
 
 //Takes two numbers and an operator and returns the value of the equation
 function operate (num1, num2, operator) {
+
+    num1 = Number(num1);
+    num2 = Number(num2);
     
     let result = 0;
 
@@ -53,11 +56,11 @@ function operate (num1, num2, operator) {
     return result;
 };
 
-//Button Functionality
+//Display variables one for inputted value and one for displayed text
 let inputValue = "";
 let text = document.getElementById('result');
 
-//Number Keys Except Bottom Row
+//Number Keys Except Bottom Row Event Listener
 let numbers = document.querySelectorAll('div.number-rows button');
 
 for (i of numbers){
@@ -71,7 +74,7 @@ for (i of numbers){
     );
 };
 
-//Bottom Row Keys
+//Bottom Row Keys Event Listener
 let bottomRow = document.querySelectorAll('div.bottom-row button');
 
 for (i of bottomRow){
@@ -96,7 +99,7 @@ function clearDisplay (){
     text.innerHTML = inputValue;
 }
 
-//Operator Buttons
+//Operator Buttons Event Listener
 let operatorButtons = document.getElementsByClassName('operators');
 
 for (i of operatorButtons){
@@ -109,3 +112,16 @@ for (i of operatorButtons){
         }
     );
 };
+
+//Equals Button Event Listener
+let equalsButton = document.getElementById('equals');
+
+equalsButton.addEventListener(
+        'click',
+        function(){
+            num2 = inputValue;
+            clearDisplay();
+            text.innerHTML = operate(num1, num2, operator);
+            inputValue = text.innerHTML;
+        }
+);
