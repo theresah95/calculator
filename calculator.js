@@ -106,10 +106,6 @@ for (i of operatorButtons){
             num1 = inputValue;
             clearDisplay();
             operator = this.innerHTML;
-
-            console.log(num1);
-            console.log(operator);
-
         }
     );
 };
