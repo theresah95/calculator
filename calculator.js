@@ -20,18 +20,11 @@ function divide (num1, num2) {
     return quotient;
 };
 
-//Testers to check above functions
-// console.log(add(5, 2));
-// console.log(subtract(5, 2));
-// console.log(multiply(5, 2));
-// console.log(divide(5, 2));
-
-
 //Variables for operations
 //First number entered in calculator
-let num1 = 0;
+let num1 = null;
 //Second number entered in calculator
-let num2 = 0;
+let num2 = null;
 //Operator entered in calculator
 let operator = '';
 
@@ -83,7 +76,7 @@ for (i of bottomRow){
         function(){
 
             if(this.innerHTML == "AC"){
-                clearDisplay();
+                clearAll();
             } else {
                 text.style.fontSize = "40px";
                 inputValue = inputValue + this.innerHTML;
@@ -101,7 +94,8 @@ function clearDisplay (){
 
 function clearAll(){
     clearDisplay();
-    num2 = 0;
+    num1 = null;
+    num2 = null;
     operator = '';
 }
 
@@ -112,19 +106,21 @@ for (i of operatorButtons){
     i.addEventListener(
         'click',
         function(){
-            if(operator == ''){
-                num1 = inputValue;
-                clearDisplay();
-                operator = this.innerHTML;
-            } else {
-                num2 = inputValue;
-                clearDisplay();
-                num1 = operate(num1, num2, operator);
-                clearAll();
-                inputValue = num1;
-                text.innerHTML = num1;
-                operator = this.innerHTML;
-            }
+
+                if(operator == '' && num1 == null){
+                    num1 = inputValue;
+                    clearDisplay();
+                    operator = this.innerHTML;
+                } else {
+                    num2 = inputValue;
+                    clearDisplay();
+                    let result = operate(num1, num2, operator);
+                    text.innerHTML = result;
+                    num1 = result;
+                    num2 = null;
+                    operator = this.innerHTML;
+                }
+            
         }
     );
 };
@@ -139,6 +135,5 @@ equalsButton.addEventListener(
             clearDisplay();
             text.innerHTML = operate(num1, num2, operator);
             inputValue = text.innerHTML;
-            clearAll();
         }
 );
