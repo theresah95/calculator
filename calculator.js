@@ -46,7 +46,7 @@ function operate (num1, num2, operator) {
         result = divide(num1, num2);
     }
 
-    return result;
+    return result.toFixed(4);
 };
 
 //Display variables one for inputted value and one for displayed text
