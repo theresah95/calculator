@@ -2,12 +2,14 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+html{
+    height: 100%;
+}
+
 body {
-  background-image: url("codioful-formerly-gradienta-9X6tbXe_bw4-unsplash.jpg");
-  background-size: 100vmax;
-  background-color: white;
-  display: flex;
-  justify-content: center;
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(252, 246, 88) 100%);
+    display: flex;
+    justify-content: center;
 }
 /* 
 div {

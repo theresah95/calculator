@@ -99,6 +99,12 @@ function clearDisplay (){
     text.innerHTML = inputValue;
 }
 
+function clearAll(){
+    clearDisplay();
+    num2 = 0;
+    operator = '';
+}
+
 //Operator Buttons Event Listener
 let operatorButtons = document.getElementsByClassName('operators');
 
@@ -106,9 +112,19 @@ for (i of operatorButtons){
     i.addEventListener(
         'click',
         function(){
-            num1 = inputValue;
-            clearDisplay();
-            operator = this.innerHTML;
+            if(operator == ''){
+                num1 = inputValue;
+                clearDisplay();
+                operator = this.innerHTML;
+            } else {
+                num2 = inputValue;
+                clearDisplay();
+                num1 = operate(num1, num2, operator);
+                clearAll();
+                inputValue = num1;
+                text.innerHTML = num1;
+                operator = this.innerHTML;
+            }
         }
     );
 };
@@ -123,5 +139,6 @@ equalsButton.addEventListener(
             clearDisplay();
             text.innerHTML = operate(num1, num2, operator);
             inputValue = text.innerHTML;
+            clearAll();
         }
 );
