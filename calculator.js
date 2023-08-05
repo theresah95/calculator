@@ -46,7 +46,13 @@ function operate (num1, num2, operator) {
         result = divide(num1, num2);
     }
 
-    return result.toFixed(4);
+    if(result % 1 == 0){
+        return result;
+    } else {
+        return result.toFixed(4);
+    }
+
+    
 };
 
 //Display variables one for inputted value and one for displayed text
@@ -133,7 +139,9 @@ equalsButton.addEventListener(
         function(){
             num2 = inputValue;
             clearDisplay();
-            text.innerHTML = operate(num1, num2, operator);
-            inputValue = text.innerHTML;
+            let result = operate(num1, num2, operator);
+            text.innerHTML = result;
+            num1 = result;
+            num2 = null;
         }
 );
