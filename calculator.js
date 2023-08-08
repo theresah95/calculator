@@ -16,32 +16,23 @@ function multiply (num1, num2) {
 };
 //Takes two numbers and divides them then returns quotient
 function divide (num1, num2) {
-    let quotient = num1/num2;
+    let quotient = num1 / num2;
     return quotient;
 };
 
-//Tests to check above functions
-// console.log(add(5, 2));
-// console.log(subtract(5, 2));
-// console.log(multiply(5, 2));
-// console.log(divide(5, 2));
-
-
 //Variables for operations
 //First number entered in calculator
-let num1 = 0;
+let num1 = null;
 //Second number entered in calculator
-let num2 = 0;
+let num2 = null;
 //Operator entered in calculator
 let operator = '';
 
-/** Operate Function
- * @param {number} num1 
- * @param {number} num2 
- * @param {string} operator
- * @returns result of calculation
- */
+//Takes two numbers and an operator and returns the value of the equation
 function operate (num1, num2, operator) {
+
+    num1 = Number(num1);
+    num2 = Number(num2);
     
     let result = 0;
 
@@ -55,5 +46,113 @@ function operate (num1, num2, operator) {
         result = divide(num1, num2);
     }
 
-    return result;
+    if(result % 1 == 0){
+        return result;
+    } else {
+        return result.toFixed(2);
+    }
+
+    
 };
+
+//Display variables one for inputted value and one for displayed text
+let inputValue = "";
+let text = document.getElementById('result');
+
+//Number Keys Except Bottom Row Event Listener
+let numbers = document.querySelectorAll('div.number-rows button');
+
+for (i of numbers){
+    i.addEventListener(
+        'click', 
+        function(){
+            text.style.fontSize = "40px";
+            inputValue = inputValue + this.innerHTML;
+            text.innerHTML = inputValue;
+        }
+    );
+};
+
+//Bottom Row Keys Event Listener
+let bottomRow = document.querySelectorAll('div.bottom-row button');
+
+for (i of bottomRow){
+    i.addEventListener(
+        'click',
+        function(){
+
+            if(this.innerHTML == "AC"){
+                clearAll();
+            } else if (this.innerHTML == "."){
+                if(inputValue % 1 == 0){
+                    text.style.fontSize = "40px";
+                    inputValue = inputValue + this.innerHTML;
+                    text.innerHTML = inputValue;
+                }
+            }else {
+                text.style.fontSize = "40px";
+                inputValue = inputValue + this.innerHTML;
+                text.innerHTML = inputValue;
+            } 
+        }
+    );
+};
+
+//Helper Function to Clear the Display and contents of inputValue variable
+function clearDisplay (){
+    inputValue = "";
+    text.innerHTML = inputValue;
+}
+
+function clearAll(){
+    clearDisplay();
+    num1 = null;
+    num2 = null;
+    operator = '';
+}
+
+//Operator Buttons Event Listener
+let operatorButtons = document.getElementsByClassName('operators');
+
+for (i of operatorButtons){
+    i.addEventListener(
+        'click',
+        function(){
+
+                if(operator == '' && num1 == null){
+                    num1 = inputValue;
+                    clearDisplay();
+                    operator = this.innerHTML;
+                } else {
+                    num2 = inputValue;
+                    if(operator == ''){
+                        operator = this.innerHTML;
+                    }
+                    clearDisplay();
+                    let result = operate(num1, num2, operator);
+                    text.innerHTML = result;
+                    num1 = result;
+                    num2 = null;
+                    operator = this.innerHTML;
+                }
+            
+        }
+    );
+};
+
+//Equals Button Event Listener
+let equalsButton = document.getElementById('equals');
+
+equalsButton.addEventListener(
+        'click',
+        function(){
+            num2 = inputValue;
+            clearDisplay();
+            let result = operate(num1, num2, operator);
+            text.innerHTML = result;
+            inputValue = text.innerHTML;
+            num1 = null;
+            num2 = null;
+            operator = '';
+        }
+);

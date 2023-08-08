@@ -1,12 +1,15 @@
 * {
     font-family: 'Courier New', Courier, monospace;
 }
+
+html{
+    height: 100%;
+}
+
 body {
-  background-image: url("codioful-formerly-gradienta-9X6tbXe_bw4-unsplash.jpg");
-  background-size: 100vmax;
-  background-color: white;
-  display: flex;
-  justify-content: center;
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgb(252, 246, 88) 100%);
+    display: flex;
+    justify-content: center;
 }
 /* 
 div {
@@ -44,9 +47,9 @@ button {
 }
 
 .display .result {
-    font-size: 40px;
-    float: right;
     padding: 5px;
+    display: inline-block;
+    width: 100%;
 }
 
 .buttons {
@@ -70,7 +73,12 @@ button {
     flex: 1;
 }
 
-.operators {
+.bottom-row {
+    display: flex;
+    flex: 1;
+}
+
+.operator-buttons {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
