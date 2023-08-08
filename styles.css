@@ -44,6 +44,7 @@ button {
     margin: 25px;
     border: 5px lightgrey solid;
     border-radius: 25px;
+    background-color: white;
 }
 
 .display .result {
@@ -73,6 +74,12 @@ button {
     flex: 1;
 }
 
+.num-button {
+    background-color: rgb(184, 227, 132);
+    color: white;
+    font-size: 25px;
+}
+
 .bottom-row {
     display: flex;
     flex: 1;
@@ -82,4 +89,17 @@ button {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+}
+
+.operators {
+    background-color: rgb(73, 199, 183);
+    color: white;
+    font-size: 25px;
+}
+
+#equals {
+    background-color: rgb(73, 199, 183);
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
 }
