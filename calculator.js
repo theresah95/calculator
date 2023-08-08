@@ -150,7 +150,8 @@ equalsButton.addEventListener(
             clearDisplay();
             let result = operate(num1, num2, operator);
             text.innerHTML = result;
-            num1 = result;
+            inputValue = text.innerHTML;
+            num1 = null;
             num2 = null;
             operator = '';
         }
