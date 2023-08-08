@@ -85,6 +85,18 @@ button {
     flex: 1;
 }
 
+.clear-all {
+    background-color: rgb(73, 199, 183);
+    color: white;
+    font-size: 25px;
+}
+
+.decimal {
+    background-color: rgb(73, 199, 183);
+    color: white;
+    font-size: 25px;
+}
+
 .operator-buttons {
     display: flex;
     flex-direction: column;
