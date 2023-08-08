@@ -49,7 +49,7 @@ function operate (num1, num2, operator) {
     if(result % 1 == 0){
         return result;
     } else {
-        return result.toFixed(4);
+        return result.toFixed(2);
     }
 
     
@@ -125,6 +125,9 @@ for (i of operatorButtons){
                     operator = this.innerHTML;
                 } else {
                     num2 = inputValue;
+                    if(operator == ''){
+                        operator = this.innerHTML;
+                    }
                     clearDisplay();
                     let result = operate(num1, num2, operator);
                     text.innerHTML = result;
@@ -149,5 +152,6 @@ equalsButton.addEventListener(
             text.innerHTML = result;
             num1 = result;
             num2 = null;
+            operator = '';
         }
 );
