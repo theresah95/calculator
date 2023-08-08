@@ -4,4 +4,4 @@ This calculator was built using fundamental HTML, CSS, and fundamental JavaScrip
 
 The calculator is able to perform basic mathematical operations with integers and floats.
 
-For a live preview, please visit: <a href="https://theresah95.github.io/calculator">theresah95.git.io/calculator</a>
+For a live preview, please visit: <a href="https://theresah95.github.io/calculator">theresah95.github.io/calculator</a>
