@@ -83,7 +83,13 @@ for (i of bottomRow){
 
             if(this.innerHTML == "AC"){
                 clearAll();
-            } else {
+            } else if (this.innerHTML == "."){
+                if(inputValue % 1 == 0){
+                    text.style.fontSize = "40px";
+                    inputValue = inputValue + this.innerHTML;
+                    text.innerHTML = inputValue;
+                }
+            }else {
                 text.style.fontSize = "40px";
                 inputValue = inputValue + this.innerHTML;
                 text.innerHTML = inputValue;
