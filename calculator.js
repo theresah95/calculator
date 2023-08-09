@@ -34,7 +34,7 @@ function operate (num1, num2, operator) {
     num1 = Number(num1);
     num2 = Number(num2);
     
-    let result = 0;
+    let result = null;
 
     if(operator == '+'){
         result = add(num1, num2);
@@ -46,11 +46,13 @@ function operate (num1, num2, operator) {
         result = divide(num1, num2);
     }
 
-    if(result % 1 == 0){
+    if(result == Infinity){
+        return "To Infinity and Beyond!";
+    } else if(result % 1 == 0){
         return result;
-    } else {
+      } else {
         return result.toFixed(2);
-    }
+        } 
 
     
 };
@@ -102,14 +104,14 @@ for (i of bottomRow){
 function clearDisplay (){
     inputValue = "";
     text.innerHTML = inputValue;
-}
+};
 
 function clearAll(){
     clearDisplay();
     num1 = null;
     num2 = null;
     operator = '';
-}
+};
 
 //Operator Buttons Event Listener
 let operatorButtons = document.getElementsByClassName('operators');
